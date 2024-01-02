@@ -1,0 +1,29 @@
+﻿@using FutbolcuKartlariMVC.Models.Entities
+@model List<Futbolcu>
+@{
+    ViewData["Title"] = "GetList";
+}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Yaş</th>
+                <th>Boy</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            @foreach (Futbolcu f in Model)
+            {
+            <tr>
+                <td>@f.Ad</td>
+                <td>@f.Soyad</td>
+                <td>@f.Yas</td>
+                <td>@f.Boy</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
