@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FutbolcuKartlariMVC.Models.Enums;
+using FutbolcuKartlariMVC.Enums;
 
-namespace FutbolcuKartlariMVC.Models.Entities
+namespace FutbolcuKartlariMVC.Entities
 {
-    public class Futbolcu : BaseEntity
+    public class Futbolcu
     {
         public int ID { get; set; }
         public string Ad { get; set; }

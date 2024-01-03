@@ -1,4 +1,6 @@
 using FutbolcuKartlariMVC.Context;
+using FutbolcuKartlariMVC.Repositories.Abstract;
+using FutbolcuKartlariMVC.Repositories.Concrete;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("ConStr")));
+
+builder.Services.AddTransient<IFutbolcuRepository, FutbolcuRepository>();
+builder.Services.AddTransient(typeof(IRepository<>), typeof(GenericRepository<>));
+
 
 var app = builder.Build();
 
@@ -26,6 +32,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Futbolcu}/{action=Index}/{id?}");
 
 app.Run();

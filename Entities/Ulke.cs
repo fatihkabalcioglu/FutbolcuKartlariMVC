@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FutbolcuKartlariMVC.Models.Entities
+namespace FutbolcuKartlariMVC.Entities
 {
-    public class Ulke : BaseEntity
+    public class Ulke
     {
         public int ID { get; set; }
         public string? UlkeAdi { get; set; }

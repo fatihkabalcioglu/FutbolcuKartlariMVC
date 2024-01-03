@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FutbolcuKartlariMVC.Models.Entities
 {
-    public class Takim
+    public class Takim : BaseEntity
     {
         public int ID { get; set; }
         public string? TakimAdi { get; set; }

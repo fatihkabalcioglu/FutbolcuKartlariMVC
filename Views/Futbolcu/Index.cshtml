@@ -1,0 +1,142 @@
+﻿@model IEnumerable<FutbolcuKartlariMVC.Models.Entities.Futbolcu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Soyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Boy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kilo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mevki)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dribbling)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Defans)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fizik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hiz)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Degeri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ayak)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrtalamaDeger)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TakimID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MevkiID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UlkeID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Boy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kilo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mevki)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dribbling)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Defans)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fizik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hiz)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Degeri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ayak)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrtalamaDeger)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TakimID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MevkiID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UlkeID)
+            </td>
+            <td>
+                @Html.ActionLink("Update", "Update", new { id=item.ID })
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

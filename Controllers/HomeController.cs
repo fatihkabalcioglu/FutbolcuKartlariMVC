@@ -1,14 +1,17 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using FutbolcuKartlariMVC.Models;
-using FutbolcuKartlariMVC.Repositories;
-using FutbolcuKartlariMVC.Context;
 
 namespace FutbolcuKartlariMVC.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly AppDbContext db;
+    private readonly ILogger<HomeController> _logger;
+
+    public HomeController(ILogger<HomeController> logger)
+    {
+        _logger = logger;
+    }
 
     public IActionResult Index()
     {
@@ -20,12 +23,9 @@ public class HomeController : Controller
         return View();
     }
 
-    public HomeController(AppDbContext db)
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
     {
-        this.db = db;
-    }
-    public IActionResult GetList()
-    {
-        return View(db.futbolcular.ToList());
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
