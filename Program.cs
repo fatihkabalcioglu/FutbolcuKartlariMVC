@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("ConStr")));
 
+builder.Services.AddTransient<ITakimRepository , TakimRepository>();
 builder.Services.AddTransient<IFutbolcuRepository, FutbolcuRepository>();
 builder.Services.AddTransient(typeof(IRepository<>), typeof(GenericRepository<>));
 
